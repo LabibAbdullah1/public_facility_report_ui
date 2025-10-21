@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Manajemen Kategori - Admin</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+      <div class="flex min-h-screen">
+            <!-- Sidebar -->
+            <aside class="bg-blue-700 text-white w-64 hidden md:block">
+                  <div class="p-6 border-b border-blue-500">
+                        <h1 class="text-xl font-bold">Admin Panel</h1>
+                        <p class="text-sm text-blue-200">Fasilitas Publik</p>
+                  </div>
+                  <nav class="p-4 space-y-2">
+                        <a href="dashboard.html" class="block px-3 py-2 rounded hover:bg-blue-600">🏠
+                              Dashboard</a>
+                        <a href="manage-reports.html" class="block px-3 py-2 rounded hover:bg-blue-600">📋 Data
+                              Laporan</a>
+                        <a href="manage-users.html" class="block px-3 py-2 rounded hover:bg-blue-600">👥 Pengguna</a>
+                        <a href="manage-categories.html" class="block px-3 py-2 rounded bg-blue-600">🏷️ Kategori</a>
+                        <a href="../login.html" class="block px-3 py-2 rounded hover:bg-blue-600">🚪 Logout</a>
+                  </nav>
+            </aside>
+
+            <!-- Main -->
+            <main class="flex-1 p-6">
+                  <header class="flex justify-between items-center mb-6">
+                        <h2 class="text-2xl font-bold text-gray-800">Manajemen Kategori</h2>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                              + Tambah Kategori
+                        </button>
+                  </header>
+
+                  <!-- Table -->
+                  <div class="bg-white rounded-lg shadow overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                              <thead class="bg-blue-600 text-white">
+                                    <tr>
+                                          <th class="p-3">Nama Kategori</th>
+                                          <th class="p-3">Deskripsi</th>
+                                          <th class="p-3 text-center">Aksi</th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                    <tr class="border-b hover:bg-gray-50">
+                                          <td class="p-3">Jalan Rusak</td>
+                                          <td class="p-3">
+                                                Laporan terkait kerusakan jalan dan trotoar.
+                                          </td>
+                                          <td class="p-3 text-center space-x-2">
+                                                <button
+                                                      class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 text-sm">
+                                                      Edit
+                                                </button>
+                                                <button
+                                                      class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">
+                                                      Hapus
+                                                </button>
+                                          </td>
+                                    </tr>
+                                    <tr class="border-b hover:bg-gray-50">
+                                          <td class="p-3">Penerangan Jalan</td>
+                                          <td class="p-3">
+                                                Masalah lampu jalan, kabel, dan listrik umum.
+                                          </td>
+                                          <td class="p-3 text-center space-x-2">
+                                                <button
+                                                      class="bg-yellow-500 text-white px-3 py-1 rounded hover:bg-yellow-600 text-sm">
+                                                      Edit
+                                                </button>
+                                                <button
+                                                      class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">
+                                                      Hapus
+                                                </button>
+                                          </td>
+                                    </tr>
+                              </tbody>
+                        </table>
+                  </div>
+            </main>
+      </div>
+      <footer class="bg-gray-800 text-gray-200 text-center py-6">
+            <p>&copy; 2025 LaporPublik. Semua Hak Dilindungi.</p>
+      </footer>
+</body>
+
+</html>
