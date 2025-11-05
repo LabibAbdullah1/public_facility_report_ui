@@ -4,76 +4,98 @@
 <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Dashboard Admin - Aplikasi Fasilitas Publik</title>
+      <title>Dashboard Admin - Lapor Publik</title>
       <script src="https://cdn.tailwindcss.com"></script>
+      <style>
+            /* animasi sidebar */
+            .sidebar-enter {
+                  transform: translateX(-100%);
+                  transition: transform 0.3s ease;
+            }
+
+            .sidebar-enter.active {
+                  transform: translateX(0);
+            }
+      </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gray-100 font-sans">
 
-      <!-- Sidebar -->
-      <div class="flex min-h-screen">
-            <aside class="bg-blue-700 text-white w-64 hidden md:block">
-                  <div class="p-6 border-b border-blue-500">
-                        <h1 class="text-xl font-bold">Admin Panel</h1>
-                        <p class="text-sm text-blue-200">Fasilitas Publik</p>
+      <!-- Container Utama -->
+      <div class="flex min-h-screen relative">
+
+            <!-- Sidebar -->
+            <aside id="sidebar"
+                  class="sidebar-enter bg-blue-700 text-white w-64 fixed md:static top-0 left-0 h-full z-40 md:translate-x-0 md:min-h-screen">
+                  <div class="p-6 border-b border-blue-500 flex justify-between items-center md:block">
+                        <div>
+                              <h1 class="text-xl font-bold">Admin Panel</h1>
+                              <p class="text-sm text-blue-200">Lapor Publik</p>
+                        </div>
+                        <!-- Tombol close di mobile -->
+                        <button id="closeSidebar" class="md:hidden text-white text-2xl">×</button>
                   </div>
                   <nav class="p-4 space-y-2">
-                        <a href="dashboard.html" class="block px-3 py-2 rounded hover:bg-blue-600 bg-blue-600">🏠
-                              Dashboard</a>
-                        <a href="manage-reports.html" class="block px-3 py-2 rounded hover:bg-blue-600">📋 Data
-                              Laporan</a>
-                        <a href="manage-users.html" class="block px-3 py-2 rounded hover:bg-blue-600">👥
+                        <a href="/admin/dashboard.html"
+                              class="block px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-500">🏠 Dashboard</a>
+                        <a href="/admin/manage-reports.html" class="block px-3 py-2 rounded-lg hover:bg-blue-600">📋
+                              Data Laporan</a>
+                        <a href="/admin/manage-users.html" class="block px-3 py-2 rounded-lg hover:bg-blue-600">👥
                               Pengguna</a>
-                        <a href="manage-categories.html" class="block px-3 py-2 rounded hover:bg-blue-600">🏷️
+                        <a href="/admin/manage-categories.html" class="block px-3 py-2 rounded-lg hover:bg-blue-600">🏷️
                               Kategori</a>
-                        <a href="../login.html" class="block px-3 py-2 rounded hover:bg-blue-600">🚪 Logout</a>
+                        <a href="#" class="block px-3 py-2 rounded-lg hover:bg-blue-600">🚪 Logout</a>
                   </nav>
             </aside>
 
+            <!-- Overlay (gelap di belakang sidebar mobile) -->
+            <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"></div>
+
             <!-- Main Content -->
-            <main class="flex-1">
-                  <!-- Navbar -->
-                  <div class="bg-white shadow p-4 flex justify-between items-center md:hidden">
+            <main class="flex-1 flex flex-col min-h-screen md:ml-0">
+
+                  <!-- Navbar (Mobile) -->
+                  <div class="bg-white shadow p-4 flex justify-between items-center md:hidden sticky top-0 z-20">
                         <h2 class="font-semibold text-lg text-blue-700">Dashboard Admin</h2>
-                        <button id="menuBtn" class="text-blue-600">☰</button>
+                        <button id="menuBtn" class="text-blue-600 text-2xl">☰</button>
                   </div>
 
                   <!-- Header -->
                   <header class="p-6 bg-white shadow flex flex-col md:flex-row md:justify-between md:items-center">
                         <h2 class="text-2xl font-bold text-gray-800">Selamat Datang, Admin 👋</h2>
-                        <p class="text-gray-500 mt-2 md:mt-0">Senin, 21 Oktober 2025</p>
+                        <p class="text-gray-500 mt-2 md:mt-0">Selasa, 28 Oktober 2025</p>
                   </header>
 
                   <!-- Statistik -->
-                  <section class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <div class="bg-blue-600 text-white rounded-lg p-4 shadow">
-                              <h3 class="text-sm">Total Laporan</h3>
+                  <section class="p-6 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <div class="bg-blue-600 text-white rounded-lg p-4 shadow hover:scale-105 transition">
+                              <h3 class="text-sm opacity-80">Total Laporan</h3>
                               <p class="text-2xl font-bold">128</p>
                         </div>
-                        <div class="bg-yellow-500 text-white rounded-lg p-4 shadow">
-                              <h3 class="text-sm">Menunggu Diproses</h3>
+                        <div class="bg-yellow-500 text-white rounded-lg p-4 shadow hover:scale-105 transition">
+                              <h3 class="text-sm opacity-80">Menunggu</h3>
                               <p class="text-2xl font-bold">45</p>
                         </div>
-                        <div class="bg-green-500 text-white rounded-lg p-4 shadow">
-                              <h3 class="text-sm">Selesai</h3>
+                        <div class="bg-green-500 text-white rounded-lg p-4 shadow hover:scale-105 transition">
+                              <h3 class="text-sm opacity-80">Selesai</h3>
                               <p class="text-2xl font-bold">68</p>
                         </div>
-                        <div class="bg-red-500 text-white rounded-lg p-4 shadow">
-                              <h3 class="text-sm">Ditolak</h3>
+                        <div class="bg-red-500 text-white rounded-lg p-4 shadow hover:scale-105 transition">
+                              <h3 class="text-sm opacity-80">Ditolak</h3>
                               <p class="text-2xl font-bold">15</p>
                         </div>
                   </section>
 
                   <!-- Filter -->
-                  <section class="px-6 mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-                        <div class="flex gap-2">
-                              <select class="border rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
+                  <section class="px-6 mt-2 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+                        <div class="flex flex-wrap gap-2">
+                              <select class="border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 text-sm">
                                     <option>Semua Kategori</option>
                                     <option>Penerangan Jalan</option>
                                     <option>Sampah</option>
                                     <option>Jalan Rusak</option>
                               </select>
-                              <select class="border rounded-lg p-2 focus:ring-2 focus:ring-blue-500">
+                              <select class="border rounded-lg p-2 focus:ring-2 focus:ring-blue-500 text-sm">
                                     <option>Semua Status</option>
                                     <option>Menunggu</option>
                                     <option>Diproses</option>
@@ -82,12 +104,12 @@
                               </select>
                         </div>
                         <input type="text" placeholder="Cari laporan..."
-                              class="border p-2 rounded-lg w-full md:w-64 focus:ring-2 focus:ring-blue-500">
+                              class="border p-2 rounded-lg w-full md:w-64 focus:ring-2 focus:ring-blue-500 text-sm">
                   </section>
 
                   <!-- Tabel Laporan -->
-                  <section class="p-6">
-                        <div class="overflow-x-auto bg-white rounded-lg shadow">
+                  <section class="p-6 overflow-x-auto">
+                        <div class="bg-white rounded-lg shadow min-w-[600px]">
                               <table class="w-full text-left border-collapse">
                                     <thead class="bg-blue-600 text-white">
                                           <tr>
@@ -96,7 +118,6 @@
                                                 <th class="p-3">Pelapor</th>
                                                 <th class="p-3">Tanggal</th>
                                                 <th class="p-3">Status</th>
-                                                <th class="p-3 text-center">Aksi</th>
                                           </tr>
                                     </thead>
                                     <tbody>
@@ -105,42 +126,67 @@
                                                 <td class="p-3">Penerangan</td>
                                                 <td class="p-3">Budi Santoso</td>
                                                 <td class="p-3">20 Okt 2025</td>
-                                                <td class="p-3"><span
-                                                            class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-sm">Diproses</span>
-                                                </td>
-                                                <td class="p-3 text-center space-x-2">
-                                                      <a href="../report-detail.html"
-                                                            class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm">Detail</a>
-                                                      <button
-                                                            class="bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 text-sm">Selesai</button>
-                                                      <button
-                                                            class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">Hapus</button>
+                                                <td class="p-3">
+                                                      <span
+                                                            class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full text-xs font-semibold">Diproses</span>
                                                 </td>
                                           </tr>
+
                                           <tr class="border-b hover:bg-gray-50">
                                                 <td class="p-3">Tumpukan Sampah</td>
                                                 <td class="p-3">Kebersihan</td>
                                                 <td class="p-3">Rani</td>
                                                 <td class="p-3">18 Okt 2025</td>
-                                                <td class="p-3"><span
-                                                            class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-sm">Selesai</span>
-                                                </td>
-                                                <td class="p-3 text-center space-x-2">
-                                                      <a href="../report-detail.html"
-                                                            class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-sm">Detail</a>
-                                                      <button
-                                                            class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-sm">Hapus</button>
+                                                <td class="p-3">
+                                                      <span
+                                                            class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">Selesai</span>
                                                 </td>
                                           </tr>
                                     </tbody>
                               </table>
                         </div>
                   </section>
+
             </main>
       </div>
-      <footer class="bg-gray-800 text-gray-200 text-center py-6">
-            <p>&copy; 2025 LaporPublik. Semua Hak Dilindungi.</p>
-      </footer>
+
+      <!-- Script: Toggle Sidebar -->
+      <script>
+            const menuBtn = document.getElementById('menuBtn');
+            const closeSidebar = document.getElementById('closeSidebar');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+
+            menuBtn.addEventListener('click', () => {
+                  sidebar.classList.add('active');
+                  overlay.classList.remove('hidden');
+            });
+
+            closeSidebar.addEventListener('click', () => {
+                  sidebar.classList.remove('active');
+                  overlay.classList.add('hidden');
+            });
+
+            overlay.addEventListener('click', () => {
+                  sidebar.classList.remove('active');
+                  overlay.classList.add('hidden');
+            });
+
+            // Script untuk toggle dropdown
+            const btn = document.getElementById('actionBtn');
+            const menu = document.getElementById('actionMenu');
+            btn.addEventListener('click', () => {
+                  menu.classList.toggle('hidden');
+            });
+
+            // Klik di luar menutup dropdown
+            document.addEventListener('click', (e) => {
+                  if (!btn.contains(e.target) && !menu.contains(e.target)) {
+                        menu.classList.add('hidden');
+                  }
+            });
+      </script>
+
 </body>
 
 </html>

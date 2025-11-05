@@ -18,6 +18,8 @@
                         <a href="report-create.html" class="hover:text-blue-500">Buat Laporan</a>
                         <a href="login.html" class="hover:text-blue-500">Login</a>
                         <a href="register.html" class="hover:text-blue-500">Daftar</a>
+                        <a href="admin/dashboard.html" class="hover:text-blue-500">Admin</a>
+
                   </div>
                   <button class="md:hidden" id="menuBtn">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none"
@@ -48,47 +50,112 @@
                   Sekarang</a>
       </section>
 
-      <!-- Daftar Laporan Publik -->
-      <section class="max-w-7xl mx-auto px-4 py-10">
-            <h3 class="text-2xl font-semibold mb-6 text-gray-700">Laporan Terbaru</h3>
+      <!-- Tentang Aplikasi -->
+      <section class="bg-white py-16 px-6 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-6">Tentang Aplikasi Lapor Publik</h3>
+            <p class="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed">
+                  <strong>Lapor Publik</strong> adalah aplikasi berbasis web yang memudahkan masyarakat untuk
+                  melaporkan berbagai masalah fasilitas umum seperti jalan rusak, lampu jalan mati, sampah menumpuk,
+                  atau infrastruktur lainnya secara cepat dan transparan.
+            </p>
+            <p class="max-w-2xl mx-auto text-gray-600 text-lg leading-relaxed mt-4">
+                  Dengan aplikasi ini, laporan Anda akan langsung diteruskan ke petugas lapangan terkait dan bisa
+                  dipantau
+                  progresnya secara real time.
+            </p>
+      </section>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                  <!-- Kartu laporan -->
-                  <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                        <img src="assets/img/jalan-rusak.jpg" alt="Jalan Rusak" class="h-48 w-full object-cover" />
-                        <div class="p-4">
-                              <span class="text-sm text-blue-600 font-medium">Jalan Rusak</span>
-                              <h4 class="font-semibold text-lg mt-1">
-                                    Lubang besar di Jalan Merdeka
-                              </h4>
-                              <p class="text-gray-600 text-sm mt-2">
-                                    Terdapat lubang besar yang membahayakan pengendara motor...
-                              </p>
-                              <div class="mt-3 flex items-center justify-between text-sm">
-                                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full">In
-                                          Progress</span>
-                                    <a href="report-detail.html" class="text-blue-600 hover:underline">Lihat Detail</a>
-                              </div>
+      <!-- Fitur Unggulan -->
+      <section class="bg-gray-50 py-16 px-6">
+            <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">Fitur Unggulan</h3>
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                  <!-- Fitur 1 -->
+                  <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition text-center">
+                        <div class="text-blue-600 mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 -auto" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7m-4 0V5a2 mx2 0 00-2-2H9a2 2 0 00-2 2v2" />
+                              </svg>
                         </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Pelaporan Cepat & Mudah</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                              Laporkan masalah cukup dengan mengisi form dan mengunggah foto, tanpa perlu datang ke
+                              kantor dinas.
+                        </p>
                   </div>
 
-                  <!-- Tambahkan lebih banyak kartu laporan -->
-                  <div class="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
-                        <img src="assets/img/lampu-jalan.jpg" alt="Lampu Jalan Mati" class="h-48 w-full object-cover" />
-                        <div class="p-4">
-                              <span class="text-sm text-blue-600 font-medium">Lampu Jalan</span>
-                              <h4 class="font-semibold text-lg mt-1">Lampu mati di taman kota</h4>
-                              <p class="text-gray-600 text-sm mt-2">
-                                    Beberapa lampu taman tidak menyala sejak minggu lalu...
-                              </p>
-                              <div class="mt-3 flex items-center justify-between text-sm">
-                                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Resolved</span>
-                                    <a href="report-detail.html" class="text-blue-600 hover:underline">Lihat Detail</a>
-                              </div>
+                  <!-- Fitur 2 -->
+                  <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition text-center">
+                        <div class="text-blue-600 mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M13 16h-1v-4h-1m1-4h.01M21 12c0 4.418-3.582 8-8 8s-8-3.582-8-8 3.582-8 8-8 8 3.582 8 8z" />
+                              </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Pantau Status Laporan</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                              Masyarakat dapat memantau perkembangan laporan mulai dari diterima, diproses, hingga
+                              selesai.
+                        </p>
+                  </div>
+
+                  <!-- Fitur 3 -->
+                  <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition text-center">
+                        <div class="text-blue-600 mb-3">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 mx-auto" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                          d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2 1.343-2 3-2zm0 8v4m-7-4h14" />
+                              </svg>
+                        </div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Terintegrasi dengan Petugas</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                              Setiap laporan akan diteruskan langsung ke petugas lapangan agar bisa segera
+                              ditindaklanjuti.
+                        </p>
+                  </div>
+            </div>
+      </section>
+
+      <!-- Kelebihan Aplikasi -->
+      <section class="bg-white py-16 px-6">
+            <h3 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">Kelebihan Lapor Publik</h3>
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10">
+                  <div class="flex items-start gap-4">
+                        <span class="text-blue-600 text-3xl">🚀</span>
+                        <div>
+                              <h4 class="font-semibold text-gray-800 text-lg mb-1">Cepat dan Efisien</h4>
+                              <p class="text-gray-600 text-sm">Laporan diterima secara instan oleh dinas terkait tanpa
+                                    birokrasi rumit.</p>
+                        </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                        <span class="text-blue-600 text-3xl">🔒</span>
+                        <div>
+                              <h4 class="font-semibold text-gray-800 text-lg mb-1">Data Aman</h4>
+                              <p class="text-gray-600 text-sm">Privasi pelapor dijaga, termasuk opsi untuk melapor
+                                    secara anonim.</p>
+                        </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                        <span class="text-blue-600 text-3xl">📱</span>
+                        <div>
+                              <h4 class="font-semibold text-gray-800 text-lg mb-1">Desain Responsif</h4>
+                              <p class="text-gray-600 text-sm">Tampil optimal di perangkat mobile maupun desktop.</p>
+                        </div>
+                  </div>
+                  <div class="flex items-start gap-4">
+                        <span class="text-blue-600 text-3xl">🌐</span>
+                        <div>
+                              <h4 class="font-semibold text-gray-800 text-lg mb-1">Akses Online 24 Jam</h4>
+                              <p class="text-gray-600 text-sm">Laporkan kapan pun dan di mana pun tanpa batas waktu.</p>
                         </div>
                   </div>
             </div>
       </section>
+
 
       <!-- Footer -->
       <footer class="bg-gray-800 text-gray-200 text-center py-6 mt-10">
