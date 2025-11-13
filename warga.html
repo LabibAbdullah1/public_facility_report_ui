@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard Warga - Lapor Publik</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="bg-blue-700 text-white w-64 hidden md:block">
+      <div class="p-6 border-b border-blue-500">
+        <h1 class="text-xl font-bold">Lapor Publik</h1>
+        <p class="text-sm text-blue-200">Dashboard Warga</p>
+      </div>
+      <nav class="p-4 space-y-2">
+        <a href="dashboard-user.html" class="block px-3 py-2 rounded bg-blue-600">🏠 Dashboard</a>
+        <a href="laporan-saya.html" class="block px-3 py-2 rounded hover:bg-blue-600">📋 Laporan Saya</a>
+        <a href="profil.html" class="block px-3 py-2 rounded hover:bg-blue-600">👤 Profil</a>
+        <a href="../login.html" class="block px-3 py-2 rounded hover:bg-blue-600">🚪 Logout</a>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+      <!-- Header -->
+      <header class="flex justify-between items-center mb-6">
+        <div>
+          <h2 class="text-2xl font-bold text-gray-800">Selamat Datang, <span class="text-blue-600">Warga</span> 👋</h2>
+          <p class="text-gray-500 text-sm">Kelola dan pantau laporan fasilitas publik Anda.</p>
+        </div>
+        <a href="report-create.html"
+          class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+          + Buat Laporan
+        </a>
+      </header>
+
+      <!-- Statistik -->
+      <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+        <div class="bg-white p-5 rounded-lg shadow text-center">
+          <p class="text-sm text-gray-500 mb-1">Total Laporan</p>
+          <h3 class="text-3xl font-bold text-blue-600">12</h3>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow text-center">
+          <p class="text-sm text-gray-500 mb-1">Diproses</p>
+          <h3 class="text-3xl font-bold text-yellow-500">4</h3>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow text-center">
+          <p class="text-sm text-gray-500 mb-1">Selesai</p>
+          <h3 class="text-3xl font-bold text-green-600">6</h3>
+        </div>
+      </section>
+
+      <!-- Tabel Laporan -->
+      <section class="bg-white rounded-lg shadow overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <thead class="bg-blue-600 text-white">
+            <tr>
+              <th class="p-3">Tanggal</th>
+              <th class="p-3">Judul Laporan</th>
+              <th class="p-3">Kategori</th>
+              <th class="p-3">Status</th>
+              <th class="p-3 text-center">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="p-3">25 Okt 2025</td>
+              <td class="p-3">Lampu Jalan Mati</td>
+              <td class="p-3">Penerangan Jalan</td>
+              <td class="p-3">
+                <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded text-xs">Diproses</span>
+              </td>
+              <td class="p-3 text-center space-x-2">
+                <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-xs">🔍</button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs">🗑️</button>
+              </td>
+            </tr>
+            <tr class="border-b hover:bg-gray-50">
+              <td class="p-3">21 Okt 2025</td>
+              <td class="p-3">Jalan Berlubang</td>
+              <td class="p-3">Infrastruktur</td>
+              <td class="p-3">
+                <span class="bg-green-100 text-green-700 px-3 py-1 rounded text-xs">Selesai</span>
+              </td>
+              <td class="p-3 text-center space-x-2">
+                <button class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 text-xs">🔍</button>
+                <button class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 text-xs">🗑️</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>
